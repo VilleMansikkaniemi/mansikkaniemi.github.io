@@ -5,19 +5,42 @@
     <title>Tech Consultancy</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Helvetica', sans-serif;
             line-height: 1.6;
             background-color: #f4f4f4;
+            align-items: center;
+            justify-content: center;
             margin: 0;
             padding: 0;
         }
 
+        .container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+        
+        p{
+            font-size:18px;
+        }
+        
+        h1 {
+            font-size: 72px;
+        }
+
+        h2 {
+            font-size: 48px;
+        }
+
         header {
-            background: #50b3a2;
+            background: #000000;
             color: #ffffff;
             padding-top: 30px;
             min-height: 70px;
             border-bottom: #bbb 1px solid;
+            
         }
 
         nav {
@@ -47,7 +70,7 @@
             padding: 15px;
         }
 
-        h1, h2 {
+        h2 {
             color: #333;
         }
 
@@ -56,47 +79,381 @@
         }
 
         footer {
-            text-align: center;
+            text-align: left;
             padding: 30px 20px;
-            background: #50b3a2;
+            background: #000000;
             color: white;
         }
+        
+        a {
+            color:lightgrey;
+        }
+        
+        #home {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.9)),url('https://images.unsplash.com/photo-1455849318743-b2233052fcff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3269&q=80" alt="W3Schools.com');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center; /* To center the text inside #home section */
+    padding: 100px 0; /* To give some space above and below the text inside #home section */
+}
+
+        #services {
+            padding: 20px 0; /* Optional, for some spacing around the title */
+        }
+        
+        .services-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        
+        .services-card {
+            background: #ffffff;
+            padding: 20px;
+            margin: 20px; 
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+            width: calc(23% - 20px); /* Width of each card. 23% so that there is some space between the cards. */
+            max-width: 200px;
+            position: relative;
+        }
+        
+        .services-card img {
+            border-radius: 8px; /* Optional: if you want to have rounded edges on images as well */
+            width: 100%;
+            height: 150px; /* You can adjust as per your design needs */
+            object-fit: contain; /* To make sure images are scaled properly */
+        }
+        
+        .services-card:hover{
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+            
+
+.card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 45%; /* or your preferred width */
+    display: inline-block;
+    vertical-align: top;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.content {
+    max-width: 1200px; /* You can set this to whatever value you find appropriate */
+    margin: auto;
+    padding: 0 20px; /* Optional: for some padding on smaller screens */
+}
+.image-container {
+  width: 150px;
+  height: 100px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* or object-fit: contain; depending on your needs */
+}
+
+
+
+#about-us {
+  text-align: left;
+  background-color: #00a3e0;
+    color: #ffffff; /* Optional: If you want to change the text color to white for better readability against the new background color */
+}
+
+.containerA {
+  display: flex;
+  align-items: top;
+  justify-content: left;
+}
+
+.image-containerB {
+  width: 400px;
+  height: 250px;
+  margin:20px;
+}
+
+.image-containerB img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* or object-fit: contain; depending on your needs */
+}
+
+.text-box {
+  margin-left: 20px;
+  max-width: 500px;
+}
+
+.home-section {
+    background-image: url('path-to-your-background-image.jpg');
+    background-size: cover; /* Make sure the background image covers the entire div */
+    background-position: center; /* Center the background image */
+    position: relative; /* Establish a stacking context */
+    height: 200px; /* Adjust as needed */
+    width: 100%; /* Make the div span the full width of its container */
+}
+
+.logo {
+    position: absolute; /* Position the logo relative to the home-section div */
+    top: 50%; /* Center the logo vertically */
+    left: 50%; /* Center the logo horizontally */
+    transform: translate(-50%, -50%); /* Ensure the centering is accurate */
+    max-width: 600px; /* Adjust as needed */
+    max-height: 400px; /* Adjust as needed */
+}
+
+
     </style>
 </head>
 <body>
+    
+    
+    
     <header>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
+                
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
     <section id="home">
-        <h1>Welcome to Our Tech Consultancy</h1>
-        <p>We provide top-notch tech solutions and services to meet your business needs.</p>
+        <div class="home-section">
+    <img src="https://i.ibb.co/5r8wyDJ/digitapp-logo.png" alt="Logo" class="logo">
+</div>
+        <div>
+            <br><br>
+        <h2>Dream it. Grow it. Believe it.</h2>
+        <br><br>
+        </div>
     </section>
+  
+<br><br><br>
+    <section id=intro>
+            <div class="content">
+
+        <h3>
+            At DigiApp, we specialize in crafting bespoke software solutions designed to propel your business into the future. We combine innovative thinking, industry insights, and unparalleled expertise to transform your visions into scalable and robust software applications.
+        </h3> 
+        </div>
+    </section>
+
     <section id="services">
-        <h2>Services</h2>
-        <ul>
-            <li>IT Consulting</li>
-            <li>Software Development</li>
-            <li>System Integration</li>
-            <li>Cloud Services</li>
-        </ul>
+        <div class="content">
+        <h2>Our services</h2>
+        <div class="services-container"> <!-- New container for the service cards -->
+            <div class="services-card">
+                <img src="https://thenounproject.com/api/private/icons/6117092/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" alt="IT Consulting">
+                <h4>IT Consulting</h4>
+            </div>
+            <div class="services-card">
+                <img src="https://thenounproject.com/api/private/icons/3131672/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" alt="Software Development">
+                <h4>Software Development</h4>
+            </div>
+            <div class="services-card">
+                <img src="https://thenounproject.com/api/private/icons/1206098/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" alt="System Integration">
+                <h4>System Integration</h4>
+            </div>
+            <div class="services-card">
+                <img src="https://thenounproject.com/api/private/icons/6117751/edit/?backgroundShape=SQUARE&backgroundShapeColor=%23000000&backgroundShapeOpacity=0&exportSize=752&flipX=false&flipY=false&foregroundColor=%23000000&foregroundOpacity=1&imageFormat=png&rotation=0" alt="Cloud Services">
+                <h4>Cloud Services</h4>
+            </div>
+        </div> 
+        </div>
     </section>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We are a team of experienced and passionate tech professionals dedicated to providing high-quality tech solutions.</p>
-    </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email us at: <a href="mailto:info@techconsultancy.com">info@techconsultancy.com</a></p>
-    </section>
+    <br><br><br>
+    <section id="about-us">
+        <div class="content">
+    <h1>About Us</h1>
+    <div class="containerA">
+      <div class="image-containerB">
+  <img src="https://images.unsplash.com/photo-1519374086542-9ff30b72beec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80" alt="Description of Image">
+</div>
+      <div class="text-box">
+        <p>At Digit·App, we’re driven by a set of core values that emphasize excellence, integrity, and innovation. We're passionate about creating impactful solutions, delivering unparalleled service to our diverse clientele, and continually pushing the boundaries of what's possible. Our vision is a world where our solutions empower people and enrich lives, fostering a more sustainable and connected future for all. Join us on this exciting journey to make a meaningful difference!.</p>
+      </div>
+    </div>
+    </div>
+    <br><br><br><br>
+  </section>
+    
+
+<section id="contact">
+    <div class="content">
+    <h2>Contact Us</h2>
+    
+    <div class="card" id="inquiriesCard">
+        <h3>Inquiries</h3>
+        <p>Ready to elevate your business through groundbreaking software solutions? Reach out to our Sales Team!</p>
+    </div>
+    
+    <div class="card" id="supportCard">
+        <h3>Customer Support</h3>
+        <p>Need assistance? Our Support Team is here to help!</p>
+    </div>
+    
+    <div class="modal" id="inquiriesModal">
+        <div class="modal-content">
+            <span class="close" id="closeInquiries">&times;</span>
+            <form id="inquiriesForm">
+                <!-- Your form fields here -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                <!-- Other form fields as needed -->
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    
+    <div class="modal" id="supportModal">
+        <div class="modal-content">
+            <span class="close" id="closeSupport">&times;</span>
+            <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+                <form action="https://deloittejuniorbootcampfy24--nbcteam3.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+                
+                <input type=hidden name="orgid" value="00DD7000000o3lx">
+                <input type=hidden name="retURL" value="http://">
+                
+                <label for="company">Company</label><input  id="company" maxlength="80" name="company" size="20" type="text" /><br>
+                
+                Contact:<input  id="00ND700000g69gc" maxlength="255" name="00ND700000g69gc" size="20" type="text" /><br>
+                
+                <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+                
+                <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+                
+                Case Issue:<select  id="00ND700000g69gX" name="00ND700000g69gX" title="Case Issue"><option value="">--None--</option><option value="Web &amp; Mobile Services">Web &amp; Mobile Services</option>
+                <option value="General Support">General Support</option>
+                </select><br>
+                
+                <label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+                
+                <label for="description">Description</label><textarea name="description"></textarea><br>
+                
+                <input type="hidden"  id="external" name="external" value="1" /><br>
+                
+                <input type="submit" name="submit">
+                
+                </form>
+        </div>
+    </div>
+    </div>
+</section>
+<br><br>
+
+<!-- ... Existing HTML ... -->
+
+
     <footer>
-        <p>&copy; 2023 Tech Consultancy. All rights reserved.</p>
+        <div class="content">
+            
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: <a href="mailto:info@digiapp.com">info@digiapp.com</a></p>
+                <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 DigiApp. All rights reserved.</p>
+        </div>
+        
     </footer>
+
+<!-- ... Existing HTML ... -->
+
+<script>
+    document.getElementById('inquiriesCard').onclick = function() {
+        document.getElementById('inquiriesModal').style.display = 'block';
+    }
+    
+    document.getElementById('supportCard').onclick = function() {
+        document.getElementById('supportModal').style.display = 'block';
+    }
+    
+    document.getElementById('closeInquiries').onclick = function() {
+        document.getElementById('inquiriesModal').style.display = 'none';
+    }
+    
+    document.getElementById('closeSupport').onclick = function() {
+        document.getElementById('supportModal').style.display = 'none';
+    }
+    
+    window.onclick = function(event) {
+        if (event.target.className === 'modal') {
+            event.target.style.display = 'none';
+        }
+    }
+    
+    document.getElementById('smoothScrollLink').addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent default behavior of the link
+      document.getElementById('mySection').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    </script>
+    
+
+    
 </body>
 </html>
