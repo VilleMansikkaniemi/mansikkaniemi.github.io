@@ -365,10 +365,10 @@
             <span class="close" id="closeSupport">&times;</span>
             <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
-                <form action="https://deloittejuniorbootcampfy24--nbcteam3.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+                <form id="supportForm" action="https://deloittejuniorbootcampfy24--nbcteam3.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" >
                 
                 <input type=hidden name="orgid" value="00DD7000000o3lx">
-                <input type=hidden name="retURL" value="http://">
+                <input type=hidden name="retURL" value="https://villemansikkaniemi.github.io/mansikkaniemi.github.io/">
                 <div style="margin-bottom: 20px;">
                 <label for="company">Company:  </label><input  id="company" maxlength="80" name="company" size="20" type="text" /><br>
                 </div>
@@ -396,7 +396,7 @@
                 </div>
                 
                 <div style="margin-bottom: 20px;">
-                <label for="description">Description of the issue:  </label><textarea name="description" rows="5" cols="40"></textarea><br>
+                <label for="description" style="display: block;">Description of the issue:  </label><textarea name="description" rows="5" cols="40"></textarea><br>
                 </div>
                 <input type="hidden"  id="external" name="external" value="1" /><br>
                 
@@ -405,6 +405,12 @@
                 </form>
         </div>
     </div>
+    <div class="modal" id="successModal">
+    <div class="modal-content">
+        <span class="close" id="closeSuccess">&times;</span>
+        <p>Your support ticket has been sent successfully!</p>
+    </div>
+</div>
     </div>
 </section>
 <br><br>
@@ -462,10 +468,43 @@
         }
     }
     
-    document.getElementById('smoothScrollLink').addEventListener('click', function(e) {
-      e.preventDefault(); // Prevent default behavior of the link
-      document.getElementById('mySection').scrollIntoView({ behavior: 'smooth' });
+ document.getElementById('supportForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+    
+    const formData = new FormData(e.target); // Get form data
+    
+    // Submit form using fetch (AJAX)
+    fetch(e.target.action, {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => {
+        if(response.ok) {
+            // Hide the support modal
+            document.getElementById('supportModal').style.display = 'none';
+
+            // Show the success modal
+            document.getElementById('successModal').style.display = 'block';
+
+            // Optionally, hide the success modal after a few seconds
+            setTimeout(function() {
+                document.getElementById('successModal').style.display = 'none';
+            }, 3000); // 3000 milliseconds = 3 seconds
+        } else {
+            // Handle errors, e.g., show an error message
+            console.error('Form submission failed', response);
+        }
+    })
+    .catch(error => {
+        // Handle errors, e.g., network error
+        console.error('Form submission error', error);
     });
+});
+
+// Handle the closing of the success modal
+document.getElementById('closeSuccess').onclick = function() {
+    document.getElementById('successModal').style.display = 'none';
+};
     
     </script>
     
